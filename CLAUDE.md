@@ -133,6 +133,31 @@ songclaude-bot.github.io (허브, public)
 
 ---
 
+## 소개 페이지 템플릿
+
+퍼블릭 프로젝트 소개 페이지를 만들 때 `project-page-template` repo를 활용하세요.
+
+```bash
+# 1. 템플릿 clone
+gh repo clone songclaude-bot/project-page-template /tmp/template
+
+# 2. 새 repo 생성 & 템플릿 복사
+gh repo create songclaude-bot/{{프로젝트명}} --public --clone
+cp -r /tmp/template/* {{프로젝트명}}/
+cp -r /tmp/template/.github {{프로젝트명}}/
+
+# 3. CLAUDE.md의 체크리스트대로 진행
+```
+
+템플릿에 포함된 내용:
+- 우주 테마 index.html (플레이스홀더 교체만으로 커스텀)
+- GitHub Pages workflow
+- 프로젝트별 CLAUDE.md (상세 커스텀 가이드)
+
+**주의**: 이 템플릿은 퍼블릭 소개 페이지 전용입니다. private 서비스 코드에는 사용하지 않습니다.
+
+---
+
 ## 배포
 
 ### GitHub Pages (정적 페이지)
